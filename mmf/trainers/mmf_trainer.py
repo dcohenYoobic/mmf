@@ -114,6 +114,8 @@ class MMFTrainer(
         dataset_type = []
         if "val" in self.run_type:
             dataset_type.append("val")
+        if "infer_train" in self.run_type:
+            dataset_type.append("train")
         if any(rt in self.run_type for rt in ["inference", "test", "predict"]):
             dataset_type.append("test")
 
